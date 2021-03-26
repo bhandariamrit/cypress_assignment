@@ -1,0 +1,22 @@
+{
+    "name": "cypress_assignment_daraz",
+    "version": "1.0.0",
+    "description": "Assignment",
+    "main": "index.js",
+    "scripts": {
+        "cy:start": "cypress open"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bhandariamrit/cypress_assignment.git"
+    },
+    "author": "Amrit",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bhandariamrit/cypress_assignment/issues"
+    },
+    "homepage": "https://github.com/bhandariamrit/cypress_assignment#readme",
+    "devDependencies": {
+        "cypress": "^6.8.0"
+    }
+}

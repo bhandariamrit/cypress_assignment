@@ -1,0 +1,14 @@
+{
+    "$schema": "https://on.cypress.io/cypress.schema.json",
+    "baseUrl": "https://www.daraz.com.np/",
+    "defaultCommandTimeout": 60000,
+    "chromeWebSecurity": false,
+    "env": {
+        "email": "ammuffying@gmail.com",
+        "password": "Automation@123"
+    },
+    "retries": {
+        "runMode": 2,
+        "openMode": 5
+    }
+}
