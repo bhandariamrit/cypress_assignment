@@ -4,8 +4,7 @@ describe('TC002_searchMobileinDarkBoxAndMultipleFilter', () => {
     beforeEach(() => {
         cy.login()
     })
-
-    it('TC002_searchMobileinDarkBoxAndMultipleFilter', () => {
+    it('TC002 | Verify that user should be able to search the Mobile and filter by Brand, Price, Rating.', () => {
         cy.get('input[type="search"]').click({ force: true })
         cy.wait(2000)
         cy.get('#q').type('Mobile')

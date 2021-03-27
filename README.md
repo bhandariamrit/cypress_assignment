@@ -26,5 +26,5 @@ https://github.com/bhandariamrit/cypress_assignment.git
 ## How to Run the Tests
 Step 1st: Clone the repo
 Step 2nd: Install Cypress (npm install cypress --save-dev)
-step 3rd: Install yarn(not mandatory)
-step 4th: yarn cy:start(for cypress open script)
+Step 3rd: Install yarn(not mandatory)
+Step 4th: yarn cy:start(for cypress open script)

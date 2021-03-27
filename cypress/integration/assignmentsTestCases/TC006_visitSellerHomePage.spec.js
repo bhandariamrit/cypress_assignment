@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe('TC002_vistSellerHomePageOlizInDaraz', () => {
+describe('TC006_vistSellerHomePageOlizInDaraz', () => {
     let myQuestion
     beforeEach(() => {
         cy.fixture('myQuestion').then((questions) => {
@@ -8,23 +8,24 @@ describe('TC002_vistSellerHomePageOlizInDaraz', () => {
         cy.login()
         cy.visit('/shop/oliz-store/')
     })
-    it('Visit the seller homepage (Oliz Homepage) in Daraz.', () => {
+    it('TC006-i | Verify that user should be able to visit oliz store and verify URL.', () => {
         cy.url().should('include', '/shop/oliz-store/')
     })
-    it('Search for Oliz Store in the Daraz Search Box.', () => {
+    it('TC006-ii | verify that user should able to search .', () => {
             cy.wait(2000)
             cy.get('#q').type('Oliz Store')
             cy.wait(2000)
             cy.get('.search-box__button--1oH7').click()
         })
         // Click for Free delivery
-    it('Click for Free delivery - > Search for any item ', () => {
+    it('TC006-ii | Verify that user should be able to search for Oliz Store in the Daraz Search Box..', () => {
+        /// Request Stubbing
         cy.intercept(
             'post',
             'https://my.daraz.com.np/pdp/item/addItemSkuQA', [],
         ).as('addItemComment')
         cy.contains('Free Delivery').click()
-            //Search for any item
+            ///Search for any item
         cy.wait(10000)
         cy.contains('Shop Now').click()
 
@@ -41,14 +42,16 @@ describe('TC002_vistSellerHomePageOlizInDaraz', () => {
         cy.contains('ASK QUESTIONS').click()
         cy.wait('@addItemComment')
     })
-    it('Verify Save More On App Click Action and verify App download link', () => {
+    it('TC006-iii | Verify Save More On App Click Action and verify App download link', () => {
         cy.wait(2000)
-        cy.get('#topActionDownload').click()
-
-        cy.wait(2000)
-            // verify app store
-        cy.get('.app-apple').should('be.visible')
-            // verify playstore
-        cy.get('.app-google').should('be.visible')
+        cy.get('#topActionDownload').should('be.visible').click()
+        cy.get('.get-the-app').should('be.visible')
+        cy.get('.app-stores > a')
+            .should('have.attr', 'href')
+            .and('include', 'itunes.apple.com/app/id978058048')
+        cy.get('.app-stores > a')
+            .eq(1)
+            .should('have.attr', 'href')
+            .and('include', 'play.google.com/store/apps/details?id=com.daraz.android')
     })
 })
