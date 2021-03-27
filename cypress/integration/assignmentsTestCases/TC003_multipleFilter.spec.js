@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
-describe('TC002_searchMobileinDarkBoxAndMultipleFilter', () => {
+describe('TC003_multipleFilter.spec', () => {
     beforeEach(() => {
         cy.login()
     })
-    it('TC002 | Verify that user should be able to search the Mobile and filter by Brand, Price, Rating.', () => {
+    it('TC003 | Verify that user should be able to search the Mobile and filter by Brand, Price, Rating.', () => {
         cy.get('input[type="search"]').click({ force: true })
         cy.wait(2000)
         cy.get('#q').type('Mobile')
