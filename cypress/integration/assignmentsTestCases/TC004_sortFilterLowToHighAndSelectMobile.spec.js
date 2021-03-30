@@ -4,7 +4,7 @@ describe('TC004_sortFilterLowToHighAndSelectMobile', () => {
         cy.login()
     })
 
-    it('TC003 | Verify that user should able to filter Best Match by "Price low to high" and able to select the mobile.', () => {
+    it('TC004 | Verify that user should able to filter Best Match by "Price low to high" and able to select the mobile.', () => {
         cy.get('input[type="search"]').click({ force: true })
         cy.wait(2000)
         cy.get('#q').type('Mobile')
